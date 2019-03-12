@@ -35,7 +35,7 @@ let
   qtCompatVersion = "5.12";
 
   mirror = "https://download.qt.io";
-  srcs = import ./srcs.nix { inherit fetchurl; inherit mirror; } // {
+  srcs = import ./srcs.nix { inherit fetchurl; fetchpatch = stdenv.fetchpatch; inherit mirror; } // {
     # Community port of the now unmaintained upstream qtwebkit.
     qtwebkit = {
       src = fetchFromGitHub {

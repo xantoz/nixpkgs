@@ -1,5 +1,5 @@
 # DO NOT EDIT! This file is generated automatically by fetch-kde-qt.sh
-{ fetchurl, mirror }:
+{ fetchurl, fetchpatch, mirror }:
 
 {
   qt3d = {
@@ -273,6 +273,11 @@
       sha256 = "1l1vgil3q0avk8jn1sdggm7np76g4mjf0nnij47yyq2aph31xsa3";
       name = "qtwebengine-everywhere-src-5.12.1.tar.xz";
     };
+    patches = [ fetchpatch {
+      url = "http://code.qt.io/cgit/qt/qtwebengine-chromium.git/patch/?id=43316b15";
+      name = "CVE-2019-5786.patch";
+      sha256 = "d8434d27ac0dd8c4d49b0208fc2df91611440d3ee733bb8597212980f98d4b1b";
+    }];
   };
   qtwebglplugin = {
     version = "5.12.1";
